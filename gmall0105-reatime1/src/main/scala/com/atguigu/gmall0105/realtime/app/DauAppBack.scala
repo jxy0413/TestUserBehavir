@@ -1,6 +1,5 @@
 package com.atguigu.gmall0105.realtime.app
 
-
 import java.text.SimpleDateFormat
 import java.util.Date
 

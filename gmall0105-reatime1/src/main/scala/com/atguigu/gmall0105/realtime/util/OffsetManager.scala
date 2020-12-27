@@ -3,6 +3,7 @@ package com.atguigu.gmall0105.realtime.util
 import org.apache.kafka.common.TopicPartition
 import org.apache.spark.streaming.kafka010.OffsetRange
 
+
 /**
   * Created by jxy on 2020/12/22 0022 9:58
   */

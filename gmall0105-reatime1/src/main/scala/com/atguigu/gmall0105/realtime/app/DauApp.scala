@@ -2,6 +2,7 @@ package com.atguigu.gmall0105.realtime.app
 
 import java.text.SimpleDateFormat
 import java.util.Date
+
 import com.alibaba.fastjson.{JSON, JSONObject}
 import com.atguigu.gmall0105.realtime.bean.DauInfo
 import com.atguigu.gmall0105.realtime.util.{MyEsUtil, MyKafkaUtil, OffsetManager, RedisUtil}
@@ -13,6 +14,7 @@ import org.apache.spark.streaming.dstream.{DStream, InputDStream}
 import org.apache.spark.streaming.kafka010.{HasOffsetRanges, OffsetRange}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import redis.clients.jedis.Jedis
+
 import scala.collection.mutable.ListBuffer
 
 

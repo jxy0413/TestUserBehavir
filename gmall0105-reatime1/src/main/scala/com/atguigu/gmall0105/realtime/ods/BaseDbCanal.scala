@@ -1,7 +1,7 @@
 package com.atguigu.gmall0105.realtime.ods
 
 import com.alibaba.fastjson.JSON
-import com.atguigu.gmall0105.realtime.util.{MyKafkaUtil, OffsetManager}
+import com.atguigu.gmall0105.realtime.util.{MyKafkaSink, MyKafkaUtil, OffsetManager}
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.InputDStream
@@ -42,13 +42,17 @@ object BaseDbCanal {
          rdd.foreach{
            jsonObj=>
            val jsonArr = jsonObj.getJSONArray("data")
+           val tableName = jsonObj.getString("table")
+           val topic = "ODS_"+tableName.toUpperCase
            import scala.collection.JavaConversions._
            for(jsonObj <- jsonArr){
-             println(jsonObj.toString)
+             //println(jsonObj.toString)
              //发送数据到Kafka
+             val msg = jsonObj.toString
+             MyKafkaSink.send(topic,msg)
            }
          }
-        OffsetManager.saveOffset(topic,groupId,offsetRanges)
+      OffsetManager.saveOffset(topic,groupId,offsetRanges)
      }
     ssc.start()
     ssc.awaitTermination()
