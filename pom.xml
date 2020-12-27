@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>gmall0105-reatime1</module>
+        <module>gmall0105-reatime</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

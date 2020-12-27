@@ -9,6 +9,7 @@ import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.streaming.dstream.InputDStream
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
 
+
 /**
   * Created by jxy on 2020/12/17 0017 23:10
   */

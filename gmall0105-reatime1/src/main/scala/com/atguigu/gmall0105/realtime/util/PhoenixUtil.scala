@@ -11,6 +11,7 @@ object PhoenixUtil {
     val list:  List[ JSONObject] = queryList("select * from  student")
     println(list)
   }
+  //官方不推荐连接池
   def   queryList(sql:String):List[JSONObject]={
     Class.forName("org.apache.phoenix.jdbc.PhoenixDriver")
     val resultList: ListBuffer[JSONObject] = new  ListBuffer[ JSONObject]()
@@ -26,7 +27,6 @@ object PhoenixUtil {
       }
       resultList+=rowData
     }
-
     stat.close()
     conn.close()
     resultList.toList
