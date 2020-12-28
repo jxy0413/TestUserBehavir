@@ -30,6 +30,7 @@ object MyKafkaSink {
   }
 
   def send(topic: String, msg: String): Unit = {
+    println(topic)
     if (kafkaProducer == null) kafkaProducer = createKafkaProducer
     kafkaProducer.send(new ProducerRecord[String, String](topic, msg))
   }

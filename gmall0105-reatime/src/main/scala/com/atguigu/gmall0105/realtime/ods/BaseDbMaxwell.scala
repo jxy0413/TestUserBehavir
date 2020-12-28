@@ -43,6 +43,7 @@ object BaseDbMaxwell {
           val jsonString = jsonObj.getString("data")
           val tableName = jsonObj.getString("table")
           val topic = "ODS_"+tableName.toUpperCase
+          println(topic)
           MyKafkaSink.send(topic,jsonString)
       }
       OffsetManager.saveOffset(topic,groupId,offsetRanges)
