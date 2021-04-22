@@ -1,0 +1,5 @@
+redis:
+  host: 47.92.212.63
+  port: 6699
+  password: bjfu1022
+  database: 1
